@@ -1,0 +1,13 @@
+[Unit]
+Description=Start Global Databases
+After=docker.service
+Requires=docker.service
+
+[Service]
+User=root
+Type=oneshot
+ExecStart=/usr/local/bin/start-global-databases.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
