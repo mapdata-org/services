@@ -4,9 +4,9 @@ set -e
 
 BASE_DIR=$(dirname "$(readlink -f "$0")")
 
-SCRIPT_DIR="$BASE_DIR/scripts"
+SCRIPT_DIR="$BASE_DIR/database/scripts"
 
-DOCKER_COMPOSE_FILE="$BASE_DIR/docker/docker-compose.yml"
+DOCKER_COMPOSE_FILE="$BASE_DIR/database/docker/docker-compose.yml"
 SYSTEMD_SERVICE_FILE="$SCRIPT_DIR/mapdata-global-databases.service"
 START_SCRIPT_FILE="$SCRIPT_DIR/start-mapdata-global-databases.sh"
 
