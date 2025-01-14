@@ -12,6 +12,7 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
     networks:
+      - default
       - mapdata-network
 
   mysql:
@@ -28,11 +29,14 @@ services:
     volumes:
       - mysql-data:/var/lib/mysql
     networks:
+      - default
       - mapdata-network
 
 networks:
-  mapdata-network:
+  default:
     driver: bridge
+  mapdata-network:
+    external: true
 
 volumes:
   postgres-data:
