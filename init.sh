@@ -2,7 +2,7 @@
 
 set -e
 
-BASE_DIR=$(dirname "$(readlink -f "$0")")
+BASE_DIR="/opt/database"
 
 SCRIPT_DIR="$BASE_DIR/database/scripts"
 

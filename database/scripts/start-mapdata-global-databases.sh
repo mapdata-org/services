@@ -1,6 +1,6 @@
 #!/bin/bash
 
-COMPOSE_FILE_DIR="/opt/mapdata/database/database/docker"
+COMPOSE_FILE_DIR="/opt/database/database/docker"
 
 if [ ! -d "$COMPOSE_FILE_DIR" ]; then
   echo "Diretório $COMPOSE_FILE_DIR não encontrado. Abortando."

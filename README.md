@@ -8,20 +8,13 @@ Este repositório contém scripts para configurar e iniciar os bancos de dados g
 - Docker Compose
 - Systemd
 
-## Preparando ambiente
-
-```bash
-sudo mkdir -p /opt/mapdata
-sudo chown $USER:$USER /opt/mapdata
-```
-
 ## Clonando o Repositório
 
 Para clonar o repositório, execute o seguinte comando:
 
 ```bash
-cd /opt/mapdata
-git clone https://github.com:iloElias/database.git
+cd /opt
+sudo git clone https://github.com:iloElias/database.git
 cd database
 ```
 
