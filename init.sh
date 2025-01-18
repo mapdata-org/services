@@ -47,6 +47,12 @@ setup_systemd_service() {
 
 start_docker_services() {
   echo "Inicializando os serviços do Docker Compose..."
+  if [ -f "$BASE_DIR/.env" ]; then
+    echo "Arquivo .env encontrado. Copiando para a pasta docker..."
+    cp "$BASE_DIR/.env" "$BASE_DIR/database/docker/"
+  else
+    echo "Arquivo .env não encontrado. Continuando sem copiar."
+  fi
   docker compose -f "$DOCKER_COMPOSE_FILE" up -d
 }
 
