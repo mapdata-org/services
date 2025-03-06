@@ -6,7 +6,8 @@ Requires=docker.service
 [Service]
 User=root
 Type=oneshot
-ExecStart=/usr/local/bin/start-mapdata-global-databases.sh
+ExecStart=/usr/local/bin/start-mapdata-global-services.sh
+ExecStop=/usr/local/bin/stop-mapdata-global-services.sh
 RemainAfterExit=yes
 
 [Install]

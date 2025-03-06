@@ -7,8 +7,8 @@ BASE_DIR="/opt/services"
 SCRIPT_DIR="$BASE_DIR/services/scripts"
 
 DOCKER_COMPOSE_FILE="$BASE_DIR/services/docker/docker-compose.yml"
-SYSTEMD_SERVICE_FILE="$SCRIPT_DIR/mapdata-global-databases.service"
-START_SCRIPT_FILE="$SCRIPT_DIR/start-mapdata-global-databases.sh"
+SYSTEMD_SERVICE_FILE="$SCRIPT_DIR/mapdata-global-services.service"
+START_SCRIPT_FILE="$SCRIPT_DIR/start-mapdata-global-services.sh"
 
 GLOBAL_NETWORK="mapdata-network"
 POSTGRES_CONTAINER="postgres"
@@ -40,10 +40,10 @@ setup_permissions() {
 
 setup_systemd_service() {
   echo "Configurando o serviço systemd para iniciar os bancos de dados globais..."
-  sudo cp "$SYSTEMD_SERVICE_FILE" /etc/systemd/system/mapdata-global-databases.service
-  sudo cp "$START_SCRIPT_FILE" /usr/local/bin/start-mapdata-global-databases.sh
+  sudo cp "$SYSTEMD_SERVICE_FILE" /etc/systemd/system/mapdata-global-services.service
+  sudo cp "$SCRIPT_DIR"/*-mapdata-global-services.sh /usr/local/bin/
   sudo systemctl daemon-reload
-  sudo systemctl enable mapdata-global-databases.service
+  sudo systemctl enable mapdata-global-services.service
 }
 
 start_docker_services() {
