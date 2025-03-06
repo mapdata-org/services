@@ -41,6 +41,7 @@ setup_permissions() {
 setup_systemd_service() {
   echo "Configurando o serviço systemd para iniciar os bancos de dados globais..."
   sudo cp "$SYSTEMD_SERVICE_FILE" /etc/systemd/system/mapdata-global-databases.service
+  sudo cp "$START_SCRIPT_FILE" /usr/local/bin/start-mapdata-global-databases.sh
   sudo systemctl daemon-reload
   sudo systemctl enable mapdata-global-databases.service
 }
