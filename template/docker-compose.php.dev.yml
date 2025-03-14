@@ -3,7 +3,7 @@ services:
     container_name: php-fpm
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile.php.dev
     restart: always
     working_dir: /var/www
     ports:
