@@ -56,6 +56,19 @@ services:
       - default
       - mapdata-network
 
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: jenkins
+    restart: always
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins_data:/var/jenkins_home
+    networks:
+      - default
+      - mapdata-network
+
   minio:
     image: minio/minio:latest
     container_name: minio
@@ -81,6 +94,8 @@ volumes:
     driver: local
   # mysql_data:
   #   driver: local
+  jenkins_data:
+    driver: local
 
 networks:
   default:

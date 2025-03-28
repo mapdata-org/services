@@ -6,7 +6,7 @@ BASE_DIR="/opt/services"
 
 SCRIPT_DIR="$BASE_DIR/services/scripts"
 
-DOCKER_COMPOSE_FILE="$BASE_DIR/services/docker/docker-compose.yml"
+DOCKER_COMPOSE_FILE="$BASE_DIR/docker-compose.yml"
 SYSTEMD_SERVICE_FILE="$SCRIPT_DIR/mapdata-global-services.service"
 START_SCRIPT_FILE="$SCRIPT_DIR/start-mapdata-global-services.sh"
 

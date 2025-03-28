@@ -1,6 +1,6 @@
 #!/bin/bash
 
-COMPOSE_FILE_DIR="/opt/services/services/docker"
+COMPOSE_FILE_DIR="/opt/services"
 
 docker stop $(docker ps -a -q)
 
