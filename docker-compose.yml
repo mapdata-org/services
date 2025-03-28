@@ -63,6 +63,8 @@ services:
     ports:
       - "8080:8080"
       - "50000:50000"
+    environment:
+      JENKINS_PASSWORD: ${JENKINS_PASSWORD}
     volumes:
       - jenkins_data:/var/jenkins_home
     networks:
