@@ -56,20 +56,20 @@ services:
       - default
       - mapdata-network
 
-  jenkins:
-    image: jenkins/jenkins:lts
-    container_name: jenkins
-    restart: always
-    ports:
-      - "8080:8080"
-      - "50000:50000"
-    environment:
-      JENKINS_PASSWORD: ${JENKINS_PASSWORD}
-    volumes:
-      - jenkins_data:/var/jenkins_home
-    networks:
-      - default
-      - mapdata-network
+  # jenkins:
+  #   image: jenkins/jenkins:lts
+  #   container_name: jenkins
+  #   restart: always
+  #   ports:
+  #     - "8080:8080"
+  #     - "50000:50000"
+  #   environment:
+  #     JENKINS_PASSWORD: ${JENKINS_PASSWORD}
+  #   volumes:
+  #     - jenkins_data:/var/jenkins_home
+  #   networks:
+  #     - default
+  #     - mapdata-network
 
   minio:
     image: minio/minio:latest
