@@ -54,4 +54,4 @@ O exemplo de uso com o docker compose está no arquivo `./docker-compose.example
 
 ## Desabilitando
 
-Para desabilitar os serviços, no intuito de eles não ligarem automaticamente sempre que o sistema operacional iniciar, rode o comando: `sudo systemctl disable mapdata-global-databases.service`.
+Para desabilitar os serviços, no intuito de eles não ligarem automaticamente sempre que o sistema operacional iniciar, rode o comando: `sudo systemctl disable mapdata-global-services.service`.
