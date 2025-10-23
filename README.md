@@ -51,3 +51,7 @@ Este script irá:
 Para garantir que seus serviços inicializem o banco de dados próprio de forma correta, utilize o script que está em `./scripts/init-db.sh`.
 
 O exemplo de uso com o docker compose está no arquivo `./docker-compose.example.yml`. Lembrando que os nomes podem ser alterados conforme suas nescidades.
+
+## Desabilitando
+
+Para desabilitar os serviços, no intuito de eles não ligarem automaticamente sempre que o sistema operacional iniciar, rode o comando: `sudo systemctl disable mapdata-global-databases.service`.
