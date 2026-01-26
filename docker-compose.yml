@@ -12,8 +12,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     networks:
-      - default
-      - mapdata-network
+      - default-network
 
   # mysql:
   #   image: mysql:8
@@ -29,8 +28,7 @@ services:
   #   volumes:
   #     - mysql_data:/var/lib/mysql
   #   networks:
-  #     - default
-  #     - mapdata-network
+  #     - default-network
 
   redis:
     image: redis:latest
@@ -39,8 +37,7 @@ services:
     ports:
       - "6379:6379"
     networks:
-      - default
-      - mapdata-network
+      - default-network
 
   rabbitmq:
     image: rabbitmq:latest
@@ -53,8 +50,7 @@ services:
       - "5672:5672"
       - "15672:15672"
     networks:
-      - default
-      - mapdata-network
+      - default-network
 
   # jenkins:
   #   image: jenkins/jenkins:lts
@@ -68,8 +64,7 @@ services:
   #   volumes:
   #     - jenkins_data:/var/jenkins_home
   #   networks:
-  #     - default
-  #     - mapdata-network
+  #     - default-network
 
   minio:
     image: minio/minio:latest
@@ -84,8 +79,7 @@ services:
       - minio_data:/data
     command: server /data --address "0.0.0.0:9100" --console-address "0.0.0.0:9101"
     networks:
-      - default
-      - mapdata-network
+      - default-network
 
 volumes:
   nginx_data:
@@ -100,7 +94,8 @@ volumes:
     driver: local
 
 networks:
-  default:
+  default-network:
     driver: bridge
-  mapdata-network:
     external: true
+    attachable: true
+    name: global-network
