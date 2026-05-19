@@ -10,4 +10,3 @@ if ! docker network inspect "${NETWORK_NAME}" >/dev/null 2>&1; then
 else
 	echo "Docker network already exists: ${NETWORK_NAME}"
 fi
-
