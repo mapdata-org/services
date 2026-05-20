@@ -48,7 +48,7 @@ services:
     restart: always
     ports:
       - "8123:8123" # HTTP interface
-      - "9000:9000" # Native client interface
+      - "9000:9000" # Native client interface OLAP
     volumes:
       - clickhouse_data:/var/lib/clickhouse
     ulimits:
